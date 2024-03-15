@@ -1,0 +1,41 @@
+HTML <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="global.css">
+    <title>Epic Invest - Ações</title>
+</head>
+<body>
+
+    <h1>Epic Ações</h1>
+    <h2>Ações em andamento</h2>
+
+    <section class="grid">
+
+        <div th:each="stock : ${stocks}" class="nes-container with-title">
+            <p class="title" th:text="${stock}" ></p>
+            <p>Good morning. Thou hast had a good night's sleep, I hope.</p>
+            <a href="#" class="nes-badge is-icon">
+                <span class="is-warning"><i class="nes-icon star is-small"></i></span>
+                <span class="is-primary">250</span>
+            </a>
+
+            <details>
+                <summary>opções</summary>
+                <button type="button" class="nes-btn is-primary">analisar...</button>
+                <button type="button" class="nes-btn is-primary">investir</button>
+                <button type="button" class="nes-btn is-primary">sem interesse</button>
+            </details>
+            
+        </div>
+
+    </section>
+
+    
+</body>
+</html>
